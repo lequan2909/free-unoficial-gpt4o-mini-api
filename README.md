@@ -5,3 +5,6 @@
 ## Start app:
 `uvicorn main:app --reload --port 9090 `
 
+### Setting up 
+- `python3.9 -m venv .venv`
+
