@@ -1,17 +1,15 @@
 from fastapi import FastAPI
 from duckduckgo_search import DDGS
 from fastapi.responses import JSONResponse
-from fastapi.openapi import openapi_url
 
 app = FastAPI(
     title="Chat API",
     description="API để thực hiện cuộc trò chuyện",
     version="1.0.0",
+    openapi_tags=[
+        {"name": "chat", "description": "Thực hiện cuộc trò chuyện"}
+    ]
 )
-
-@app.get("/openapi.json")
-async def get_openapi():
-    return await openapi_url(app)
 
 @app.get("/chat/")
 async def chat(query: str):
